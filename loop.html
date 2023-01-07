@@ -7,7 +7,18 @@
 </head>
 <body>
     <input type="text" id="switches">
-    <input type="submit" onclick="week()">
+    <input type="submit" onclick="week()"><br><br>
+    <input type="text" id="a">
+    <input type="submit" onclick="table()"><br><br>
+    <div id="a1"></div>
+
+    <input type="text" id="b">
+    <input type="submit" onclick="table1()"><br><br>
+    <div id="a2"></div>
+
+    <input type="text" id="c">
+    <input type="submit" onclick="table2()"><br><br>
+    <div id="a3"></div>
     <script>
         function week(){
             var a = parseInt(document.getElementById("switches").value);
@@ -30,15 +41,38 @@
 
             }
         }
-        for(var i =0 ; i<10;i++){
-            document.write(i);
+       function table(){
+        var a = parseInt(document.getElementById("a").value);
+        var r = " ";
+        for(var i =1 ; i<=12;i++){
+            r=r+a+ "X" +i+ "=" +a*i+"<br>";
+            
         }
-        for(var i = 1 ; i<11;i++){
-            document.write("the value is"+i);
+        document.getElementById("a1").innerHTML=r;
+
+    }
+    function table1(){
+        var b = parseInt(document.getElementById("b").value);
+        var r = " ";
+        var i = 1;
+        while(i<=12){
+            r=r+b+ "X" +i+ "=" +b*i+"<br>";
+            i++;
         }
-        for(var i = 1 ; i<=10;i++){
-            document.write(i);
-        }
+        document.getElementById("a2").innerHTML=r;
+
+    }
+    function table2(){
+        var c = parseInt(document.getElementById("c").value);
+        var r = " ";
+        var i = 1;
+        do{
+            r=r+c+ "X" +i+ "=" +c*i+"<br>";
+            i++;
+        }while(i<=12);
+        document.getElementById("a3").innerHTML=r;
+
+    }
     </script>
 </body>
 </html>
